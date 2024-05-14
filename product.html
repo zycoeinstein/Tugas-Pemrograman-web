@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Halaman Produk</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+	<!-- header -->
+	<div class="medsos">
+		<div class="container">
+			<ul>
+				<li><a href="https://wa.me/qr/JO26LCFT5HU4A1"><i class="fab fa-whatsapp"></i></a></li>
+				<li><a href="https://www.instagram.com/falahyusnann/"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="https://youtube.com/@falahyusnann?si=k8PXxpLu6xzHuO9K"><i class="fab fa-youtube"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<header>
+		<div class="container">
+		<h1><a href="contact.html"></a>Warung Mamah Cucu</h1>
+		<ul>
+			<li class="active"><a href="product.html">PRODUK</a></li>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="profil.html">TENTANG KAMI</a></li>
+			<li><a href="contact.html">KONTAK</a></li>
+		</ul>
+		</div>
+	</header>
+
+	<!-- banner -->
+	<section class="banner1">
+	</section>
+
+	<!-- about -->
+	<div class="gambar">
+        <div class="foto">
+            <img src="img/barang1.jpg"><br><br>
+            <h1>Mama Lemon</h1>
+            <p>Rp 3.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang2.jpg"><br><br>
+            <h1>Bumbu Masak</h1>
+            <p>Rp 500</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang3.jpg"><br><br>
+            <h1>Sayuran</h1>
+            <p>Rp 5.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang4.jpg"><br><br>
+            <h1>Beras</h1>
+            <p>Rp 17.500</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang5.jpg"><br><br>
+            <h1>Daging Ayam</h1>
+            <p>Rp 11.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang6.jpg"><br><br>
+            <h1>Aneka Kerupuk Seblak</h1>
+            <p>Rp 20.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang7.jpg"><br><br>
+            <h1>Es Krim</h1>
+            <p>Rp 5.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang8.jpg"><br><br>
+            <h1>Kopi</h1>
+            <p>Rp 2.000</p>
+
+        </div>
+        <div class="foto">
+            <img src="img/barang9.jpg"><br><br>
+            <h1>Air Galon</h1>
+            <p>Rp 20.000</p>
+
+        </div>
+    </div>
+    
+    <div class="order-form">
+        <h2>Belanja via WhatsApp</h2>
+        <div>
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="product">Produk:</label>
+            <select id="product" name="product">
+                <option value="Mama Lemon">Mama Lemon</option>
+                <option value="Bumbu Masak">Bumbu Masak</option>
+                <option value="Sayuran">Sayuran</option>
+                <option value="Beras">Beras</option>
+                <option value="Daging Ayam">Daging Ayam</option>
+                <option value="Aneka Kerupuk Seblak">Aneka Kerupuk Seblak</option>
+                <option value="Es Krim">Es Krim</option>
+                <option value="Kopi">Kopi</option>
+                <option value="Air Galon">Air Galon</option>
+            </select>
+        </div>
+        <div>
+            <label for="qty">Jumlah:</label>
+            <input type="number" id="qty" name="qty" required>
+        </div>
+        <button type="button" onclick="submitOrder()">Beli</button>
+    </div>
+    
+    <script>
+        function submitOrder() {
+            // Mendapatkan nilai input dari formulir
+            var name = document.getElementById('name').value;
+            var product = document.getElementById('product').value;
+            var qty = document.getElementById('qty').value;
+    
+            // Membentuk pesan yang akan dikirim ke WhatsApp
+            var message = `Halo Mamah Cucu, saya ingin memesan:\n\nNama: ${name}\nProduk: ${product}\nJumlah: ${qty}`;
+            
+            // Nomor WhatsApp tujuan (ganti dengan nomor sebenarnya, awali dengan kode negara)
+            var whatsappNumber = '6295361342900';
+            
+            // Membuat URL WhatsApp dengan pesan yang sudah diformat
+            var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+            // Membuka URL WhatsApp di tab baru
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<small> Copyright &copy; 2024 - Falah Yusnan Nurhuda, All Rights Reserved.</small>
+		</div>
+	</footer>
+</body>
+</html>

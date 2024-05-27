@@ -41,106 +41,61 @@
             <img src="img/barang1.jpg"><br><br>
             <h1>Mama Lemon</h1>
             <p>Rp 3.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang2.jpg"><br><br>
             <h1>Bumbu Masak</h1>
             <p>Rp 500</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang3.jpg"><br><br>
             <h1>Sayuran</h1>
             <p>Rp 5.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang4.jpg"><br><br>
             <h1>Beras</h1>
             <p>Rp 17.500</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang5.jpg"><br><br>
             <h1>Daging Ayam</h1>
             <p>Rp 11.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang6.jpg"><br><br>
             <h1>Aneka Kerupuk Seblak</h1>
             <p>Rp 20.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang7.jpg"><br><br>
             <h1>Es Krim</h1>
             <p>Rp 5.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang8.jpg"><br><br>
             <h1>Kopi</h1>
             <p>Rp 2.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
         <div class="foto">
             <img src="img/barang9.jpg"><br><br>
             <h1>Air Galon</h1>
             <p>Rp 20.000</p>
-
+            <a href="formorder.html" class="green-button">Beli Sekarang</a>
         </div>
     </div>
-    
-    <div class="order-form">
-        <h2>Belanja via WhatsApp</h2>
-        <div>
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="product">Produk:</label>
-            <select id="product" name="product">
-                <option value="Mama Lemon">Mama Lemon</option>
-                <option value="Bumbu Masak">Bumbu Masak</option>
-                <option value="Sayuran">Sayuran</option>
-                <option value="Beras">Beras</option>
-                <option value="Daging Ayam">Daging Ayam</option>
-                <option value="Aneka Kerupuk Seblak">Aneka Kerupuk Seblak</option>
-                <option value="Es Krim">Es Krim</option>
-                <option value="Kopi">Kopi</option>
-                <option value="Air Galon">Air Galon</option>
-            </select>
-        </div>
-        <div>
-            <label for="qty">Jumlah:</label>
-            <input type="number" id="qty" name="qty" required>
-        </div>
-        <button type="button" onclick="submitOrder()">Beli</button>
-    </div>
-    
-    <script>
-        function submitOrder() {
-            // Mendapatkan nilai input dari formulir
-            var name = document.getElementById('name').value;
-            var product = document.getElementById('product').value;
-            var qty = document.getElementById('qty').value;
-    
-            // Membentuk pesan yang akan dikirim ke WhatsApp
-            var message = `Halo Mamah Cucu, saya ingin memesan:\n\nNama: ${name}\nProduk: ${product}\nJumlah: ${qty}`;
-            
-            // Nomor WhatsApp tujuan (ganti dengan nomor sebenarnya, awali dengan kode negara)
-            var whatsappNumber = '62895361342900';
-            
-            // Membuat URL WhatsApp dengan pesan yang sudah diformat
-            var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
-            // Membuka URL WhatsApp di tab baru
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
 
+
+
+    
 	<!-- footer -->
 	<footer>
 		<div class="container">

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        .order-form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .order-form div {
+            margin-bottom: 10px;
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .order-form input, .order-form select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .order-form button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .product-img {
+            display: none;
+            max-width: 100px;
+            height: auto;
+            margin: 0 auto; 
+            display: block; 
+        }
+        .container {
+  display: flex; /* Use flexbox for layout */
+	width: 45%;
+	margin: 0 auto;
+}
+
+.foto {
+  flex: 1; /* Each div takes equal space */
+  text-align: center; /* Center-align content */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.foto img {
+  width: 100%; /* Make image responsive */
+  max-width: 150px; /* Adjust image max-width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the image is treated as a block element */
+  margin: 0 auto 10px; /* Center the image and add bottom margin */
+}
+
+.foto h1 {
+  font-size: 20px; /* Adjust heading font size */
+  margin-bottom: 5px; /* Add spacing below heading */
+}
+
+.foto p {
+  font-size: 16px; /* Adjust paragraph font size */
+  margin-bottom: 0; /* Remove default margin for paragraph */
+}
+    </style>
+</head>
+<body>
+
+<div class="order-form">
+    <h2>Belanja dan Bayar</h2>
+    <div>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="product">Produk:</label>
+<select id="product" name="product" onchange="showProductImage()">
+    <option value="Mama Lemon" data-img="img/barang1.jpg">Mama Lemon</option>
+    <option value="Bumbu Masak" data-img="img/barang2.jpg">Bumbu Masak</option>
+    <option value="Sayuran" data-img="img/barang3.jpg">Sayuran</option>
+    <option value="Beras" data-img="img/barang4.jpg">Beras</option>
+    <option value="Daging Ayam" data-img="img/barang5.jpg">Daging Ayam</option>
+    <option value="Aneka Kerupuk Seblak" data-img="img/barang6.jpg">Aneka Kerupuk Seblak</option>
+    <option value="Es Krim" data-img="img/barang7.jpg">Es Krim</option>
+    <option value="Kopi" data-img="img/barang8.jpg">Kopi</option>
+    <option value="Air Galon" data-img="img/barang9.jpg">Air Galon</option>
+</select>
+<img id="productImage" class="product-img" src="" alt="Product Image">
+        </select>
+    </div>
+    <div>
+        <label for="qty">Jumlah:</label>
+        <input type="number" id="qty" name="qty" required>
+    </div>
+    <button type="button" onclick="submitOrder()">Bayar</button>
+</div>
+<div class="container">
+    <div class="foto">
+        <img src="img/QR.jpg">
+        <h1>Dana</h1>
+        <p>082215506138 (Falah Yusnan Nurhuda)</p>
+    </div>
+    <div class="foto">
+        <img src="img/QR2.jpg">
+        <h1>WhatsApp</h1>
+        <p>0895361342900 (Falahyusnann)</p>
+    </div>
+  </div>
+
+<script>
+    function showProductImage() {
+        var selectedProduct = document.getElementById("product");
+        var selectedOption = selectedProduct.options[selectedProduct.selectedIndex];
+        var imgSrc = selectedOption.getAttribute("data-img"); // Get the value of data-img attribute
+
+        // Display the selected product image
+        var productImg = document.getElementById("productImage");
+        productImg.src = imgSrc;
+        productImg.style.display = "block";
+    }
+    function submitOrder() {
+        // Mendapatkan nilai input dari formulir
+        var name = document.getElementById('name').value;
+        var product = document.getElementById('product').value;
+        var qty = document.getElementById('qty').value;
+
+        // Membentuk pesan yang akan dikirim ke WhatsApp
+        var message = `Halo Mamah Cucu, saya ingin memesan:\n\nNama: ${name}\nProduk: ${product}\nJumlah: ${qty}`;
+        
+        // Nomor WhatsApp tujuan (ganti dengan nomor sebenarnya, awali dengan kode negara)
+        var whatsappNumber = '62895361342900';
+        
+        // Membuat URL WhatsApp dengan pesan yang sudah diformat
+        var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Membuka URL WhatsApp di tab baru
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
+</body>
+</html>
